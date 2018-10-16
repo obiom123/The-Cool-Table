@@ -5,7 +5,7 @@ const main = async () => {
   // Create model instances here
   const user1 = await User.create({
     userEmail: 'Obiom@hotmail.com',
-    passwordDigest: 'CoolCool'
+    passwordDigest: 'Cool123'
   })
 
   const team1 = await Team.create({

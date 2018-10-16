@@ -34,15 +34,17 @@ export default class Login extends Component {
       })
     } else {
       localStorage.setItem('user-jwt', checkUserBody);
+
       this.setState({
         loggedIn: true
       })
+      
     }
   }
   render() {
     if (this.state.loggedIn) {
       return (
-        <Redirect to="/" />
+        <Redirect to="/editpage" />
       )
     }
     return (
@@ -76,7 +78,6 @@ export default class Login extends Component {
           </div>
 
           <div className="button-container">  
-            <button className="button" type="button" onClick={this.register}>Register</button>
             <button className="button" type="button" onClick={this.logIn}>Log in</button>
           </div>
 

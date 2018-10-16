@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 5678;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User, League, Team, Player } = require('./models');
@@ -34,9 +33,9 @@ app.post('/api/login', async (request, response) => {
     })
   }
 
-  const checkPassword = await bcrypt.compare(request.body.password, userInfo.passwordDigest);
+  // const checkPassword = await bcrypt.compare(request.body.password, userInfo.passwordDigest);
 
-  if (checkPassword) {
+  if (userInfo.passwordDigest === request.body.password) {
     const jwtToken = jwt.sign({ userId: userInfo.id }, jwtSecret);
     response.json(jwtToken);
   } else {

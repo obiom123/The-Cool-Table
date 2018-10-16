@@ -2,9 +2,43 @@ import React, { Component } from "react";
 import "./style.css";
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Login from "../Login";
+import EditPage from "../EditPage";
+
 import "./style.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      userEmail: "",
+      password: "",
+      emailValid: true,
+      passwordValid: true,
+    }
+  }
+
+  onInputChange = evt => {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    })
+
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*/;
+    // (?=.{6,32}$)
+
+    const validateEmail = emailRegex.test(String(this.state.userEmail).toLowerCase());
+    const validatePassword = passwordRegex.test(String(this.state.password));
+
+    this.setState({
+      emailValid: validateEmail,
+      passwordValid: validatePassword,
+    })
+  }
+
+  logout = () => {
+    localStorage.clear();
+  }
   render() {
     return (
       <Router>
@@ -30,7 +64,11 @@ class App extends Component {
         <footer>
 
         </footer>
-        <Route path="/login" exact component={Login} />
+        <Route
+              path="/login"
+              render={(props) => <Login {...props} emailValid={this.state.emailValid} passwordValid={this.state.passwordValid} userEmail={this.state.userEmail} password={this.state.password} onLogIn={this.onLogIn} onInputChange={this.onInputChange} />}
+            />
+        <Route path="/editpage" exact component={EditPage} />
 
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick" />
