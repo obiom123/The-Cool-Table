@@ -17,7 +17,6 @@ const League = sequelize.define('league', {
   gender: Sequelize.TEXT,
   startEndDates: Sequelize.TEXT,
   leagueFee: Sequelize.TEXT,
-  teamColor: Sequelize.TEXT,
 })
 
 const Team = sequelize.define('team', {
@@ -30,7 +29,7 @@ const Team = sequelize.define('team', {
 })
 
 const Player = sequelize.define('player', {
-  Name: Sequelize.TEXT,
+  name: Sequelize.TEXT,
   age: Sequelize.INTEGER,
   playerPhoneNumber: Sequelize.TEXT,
   playerEmergencyContact: Sequelize.TEXT,

@@ -3,6 +3,15 @@ import "./style.css";
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Login from "../Login";
 import EditPage from "../EditPage";
+import DisplayCoesneck from "../DisplayCoesneck";
+import PlayersFromTeams from "../PlayersFromTeams";
+import DetailPlayerView from "../DetailPlayerView";
+
+
+
+
+
+
 
 import "./style.css";
 
@@ -69,6 +78,14 @@ class App extends Component {
               render={(props) => <Login {...props} emailValid={this.state.emailValid} passwordValid={this.state.passwordValid} userEmail={this.state.userEmail} password={this.state.password} onLogIn={this.onLogIn} onInputChange={this.onInputChange} />}
             />
         <Route path="/editpage" exact component={EditPage} />
+        <Route path="/DisplayCoesneck" exact component={DisplayCoesneck} />
+        <Route path="/PlayersFromTeams/:id" exact component={PlayersFromTeams} />
+        <Route path="/DetailPlayerView/:id" exact component={DetailPlayerView} />
+
+
+
+
+
 
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick" />
@@ -77,6 +94,9 @@ class App extends Component {
           <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
         </form>
         <Link to="/login">Login</Link>
+        <Link to="/DisplayCoesneck">Coesneck</Link>
+        <Link to="/PlayersFromTeams">PlayerrrrrrrPageeee</Link>
+
         </section>
       </div>
       </Router>

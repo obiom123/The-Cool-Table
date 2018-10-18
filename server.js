@@ -44,7 +44,44 @@ app.post('/api/login', async (request, response) => {
     })
   }
 })
+app.get('/api/leagues', async (request, response) => {
+  // const token = request.headers['jwt-token'];
+  // const verify = await jwt.verify(token, jwtSecret);
 
+  const leagues = await League.findAll({
+    order: [['id', 'DESC']],
+    // where: {userId: verify.userId }
+  });
+  response.json(leagues)
+})
+app.get('/api/players', async (request, response) => {
+  console.log(request.query)
+  // const token = request.headers['jwt-token'];
+  // const verify = await jwt.verify(token, jwtSecret);
+  const findAllOptions = {
+    order: [['id', 'DESC']],
+  }
+  if (request.query.teamid) {
+    findAllOptions.include = [
+      {
+        model: Team,
+        where: { id: request.query.teamid },
+        attributes: []
+      }
+    ]
+  }
+  const players = await Player.findAll(findAllOptions);
+  response.json(players)
+})
+app.get('/api/players/:id', async (request, response) => {
+  let id = request.params.id
+  const idPlayer = await Player.findOne({
+    where: {
+      id: id
+    }
+  })
+  response.json(idPlayer)
+})
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
