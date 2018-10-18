@@ -26,25 +26,22 @@ export default class DetailPlayerView extends Component {
 
 
     deletePlayers = async () => {
+      this.setState({
+        deletePlayer: true
+    })
         const id = this.props.match.params.id
         const deleteplayersInfo = await fetch(`/api/players/${id}`, {
             method: 'DELETE',
-        });
-        this.setState({
-            deletePlayers: true
         })
     }
 
     render() {
-        const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG  } = this.state.player
+        const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG, teamId  } = this.state.player
         console.log(this.state.player)
 
-
-
-      
         if (this.state.deletePlayer) {
             return (
-              <Redirect to="/" />
+              <Redirect to= {`/PlayersFromTeams/${teamId}`} />
             )
           }
         return (
@@ -75,8 +72,8 @@ export default class DetailPlayerView extends Component {
                    
                     <div className="edit-button-container">
                         {/* <Link className="button" to={'/editcontact/' + this.props.match.params.id} ><button>Edit</button></Link> */}
-                        {/* <button className="button"><Link className="link"to={'/editcontact/' + this.props.match.params.id} >Edit</Link></button> */}
-                        {/* <button className="button" onClick={this.deleteContact} >Delete</button> */}
+                        <button className="button"><Link className="link"to={'/editPlayerPage/' + this.props.match.params.id} >Edit</Link></button>
+                        <button className="button" onClick={this.deletePlayers} >Delete</button>
                     </div>
                 </div>
             </div>

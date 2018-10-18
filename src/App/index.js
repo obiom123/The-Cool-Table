@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import "./style.css";
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Login from "../Login";
-import EditPage from "../EditPage";
+// import EditPage from "../EditPage";
 import DisplayCoesneck from "../DisplayCoesneck";
 import PlayersFromTeams from "../PlayersFromTeams";
 import DetailPlayerView from "../DetailPlayerView";
+import EditPlayerPage from "../EditPlayerPage"
+
 
 
 
@@ -77,10 +79,11 @@ class App extends Component {
               path="/login"
               render={(props) => <Login {...props} emailValid={this.state.emailValid} passwordValid={this.state.passwordValid} userEmail={this.state.userEmail} password={this.state.password} onLogIn={this.onLogIn} onInputChange={this.onInputChange} />}
             />
-        <Route path="/editpage" exact component={EditPage} />
+        {/* <Route path="/editpage" exact component={EditPage} /> */}
         <Route path="/DisplayCoesneck" exact component={DisplayCoesneck} />
         <Route path="/PlayersFromTeams/:id" exact component={PlayersFromTeams} />
         <Route path="/DetailPlayerView/:id" exact component={DetailPlayerView} />
+        <Route path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
 
 
 

@@ -83,6 +83,51 @@ app.get('/api/players/:id', async (request, response) => {
   response.json(idPlayer)
 })
 
+app.delete('/api/players/:id', async (request, response) => {
+  const id = request.params.id 
+  const deletePlayer = await Player.destroy({
+    where: {
+      id: id
+    }
+  });
+  response.status(200).json(deletePlayers);
+});
+
+app.put('/api/players/:id', async (request, response) => {
+  let id = request.params.id;
+  const playerEdit = await Player.findOne({
+    where: {
+      id: id
+    }
+  })
+  const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG, teamId  } = request.body
+     playerEdit.name = name
+     playerEdit.age = age
+     playerEdit.playerPhoneNumber = playerPhoneNumber
+     playerEdit.playerEmergencyContact = playerEmergencyContact
+     playerEdit.pointsGame1 = pointsGame1
+     playerEdit.pointsGame2 = pointsGame2
+     playerEdit.pointsGame3 = pointsGame3
+     playerEdit.pointsGame4 = pointsGame4
+     playerEdit.pointsGame5 = pointsGame5
+     playerEdit.pointsGame6 = pointsGame6
+     playerEdit.pointsGame7 = pointsGame7
+     playerEdit.pointsGame8 = pointsGame8
+     playerEdit.pointsGame9 = pointsGame9
+     playerEdit.pointsGame10 = pointsGame10
+     playerEdit.pointsGame11 = pointsGame11
+     playerEdit.pointsGame12 = pointsGame12
+     playerEdit.avgPPG = avgPPG
+  await playerEdit.save();
+  
+  response.json(playerEdit);
+})
+
+
+
+
+
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
 });
