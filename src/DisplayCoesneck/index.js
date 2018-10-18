@@ -40,7 +40,7 @@ render() {
 
         <div className="league-containers">
 
-          {this.state.leagues.map(league => <Link className="each-league-name" to={'/detailleague/' + league.id} key={league.id} ><p className="each-league-name" key={league.id} >{league.leagueName}</p></Link>)}
+          {this.state.leagues.map(league => <Link className="each-league-name" to={'/PlayersFromTeams/' + league.id} key={league.id} ><p className="each-league-name" key={league.id} >{league.leagueName}</p></Link>)}
           
         </div> 
       </div>
