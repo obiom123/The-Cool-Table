@@ -14,6 +14,7 @@ export default class DetailPlayerView extends Component {
     }
 
     componentDidMount = async () => {
+        console.log('component did mount')
         const id = this.props.match.params.id
         const findPlayersInfo = await fetch(`/api/players/${id}`)
         const playersInfo = await findPlayersInfo.json()
@@ -36,7 +37,7 @@ export default class DetailPlayerView extends Component {
 
     render() {
         const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG  } = this.state.player
-        console.log(this.state.player.name)
+        console.log(this.state.player)
 
 
 

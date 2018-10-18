@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import "./style.css"
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 
-
 export default class PlayersFromTeams extends Component {
     constructor(props) {
         super(props)
@@ -69,7 +68,7 @@ export default class PlayersFromTeams extends Component {
                     <p className="detail-info-label"><span>{pointsGame12}</span></p>
                     <p className="detail-info-label"><span>{playerEmergencyContact}</span></p>
                     <p className="detail-info-label"><span>{avgPPG}</span></p>
-                    {this.state.players.map(player => <Link className="each-contact-name" to={'/players/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Avg PPG {player.avgPPG}</p></Link>)}
+                    {this.state.players.map(player => <Link className="each-contact-name" to={'/DetailPlayerView/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Avg PPG {player.avgPPG}</p></Link>)}
 
 
                    
