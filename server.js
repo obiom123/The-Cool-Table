@@ -11,7 +11,7 @@ const jwtSecret = 'cnc516516'
 const app = express();
 
 app.use(bodyParser.json());
-
+app.use("/", express.static("./build/"));
 
 app.post('/api/login', async (request, response) => {
   if (!request.body.userEmail || !request.body.password) {
@@ -150,7 +150,11 @@ app.post('/api/players', async (request, response) => {
 });
 
 
-
+if (process.env.NODE_ENV == "production") {
+  app.get("/*", function(request, response) {
+    response.sendFile(path.join(__dirname, "build", "index.html"));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
