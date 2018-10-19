@@ -22,31 +22,31 @@ export default class DetailPlayerView extends Component {
         this.setState({
             player: playersInfo
         })
-    } 
+    }
 
 
     deletePlayers = async () => {
-      this.setState({
-        deletePlayer: true
-    })
         const id = this.props.match.params.id
         const deleteplayersInfo = await fetch(`/api/players/${id}`, {
             method: 'DELETE',
         })
+        this.setState({
+            deletePlayer: true
+        })
     }
 
     render() {
-        const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG, teamId  } = this.state.player
+        const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG, teamId } = this.state.player
         console.log(this.state.player)
 
         if (this.state.deletePlayer) {
             return (
-              <Redirect to= {`/PlayersFromTeams/${teamId}`} />
+                <Redirect to={`/PlayersFromTeams/${teamId}`} />
             )
-          }
+        }
         return (
             <div>
-                <Link to="/"><img className="exit-button" src={"/images/button-exit.png"}/></Link>
+                <Link to="/"><img className="exit-button" src={"/images/button-exit.png"} /></Link>
                 <div className="all-form-containers">
                     <h1>This is the Player pageeeeeee</h1>
                     <p className="detail-info-label detail-name" ><span className="detail-info">{name}</span></p>
@@ -69,10 +69,10 @@ export default class DetailPlayerView extends Component {
                     {/* {this.state.players.map(player => <Link className="each-contact-name" to={'/detailcontact/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Avg PPG {player.avgPPG}</p></Link>)} */}
 
 
-                   
+
                     <div className="edit-button-container">
                         {/* <Link className="button" to={'/editcontact/' + this.props.match.params.id} ><button>Edit</button></Link> */}
-                        <button className="button"><Link className="link"to={'/editPlayerPage/' + this.props.match.params.id} >Edit</Link></button>
+                        <button className="button"><Link className="link" to={'/editPlayerPage/' + this.props.match.params.id} >Edit</Link></button>
                         <button className="button" onClick={this.deletePlayers} >Delete</button>
                     </div>
                 </div>

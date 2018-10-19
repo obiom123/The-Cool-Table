@@ -18,7 +18,6 @@ export default class PlayersFromTeams extends Component {
         const findPlayersInfo = await fetch(`/api/players?teamid[]=${id}`, {
             method: 'GET',
           })
-        // console.log(findPlayersInfo)
         const playersInfo = await findPlayersInfo.json()
         console.log(playersInfo)
         this.setState({
@@ -49,7 +48,7 @@ export default class PlayersFromTeams extends Component {
           }
         return (
             <div>
-                <Link to="/"><img className="exit-button" src={"/images/button-exit.png"}/></Link>
+                {/* <Link to="/"><img className="exit-button" src={"/images/button-exit.png"}/></Link> */}
                 <div className="all-form-containers">
                     <h1>This is the Player pageeeeeee</h1>
                     <p className="detail-info-label detail-name" ><span className="detail-info">{name}</span></p>
@@ -72,7 +71,8 @@ export default class PlayersFromTeams extends Component {
                     {this.state.players.map(player => <Link className="each-contact-name" to={'/DetailPlayerView/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Averging{player.avgPPG}</p></Link>)}
 
 
-                   
+                    <Link className="addcontact-button-container" to={'/AddPlayerPage/' + this.props.match.params.id}><img className="addcontact-button" src={"/images/addButton.png"}/></Link>
+
                     <div className="edit-button-container">
                         {/* <Link className="button" to={'/editcontact/' + this.props.match.params.id} ><button>Edit</button></Link> */}
                         {/* <button className="button"><Link className="link"to={'/editcontact/' + this.props.match.params.id} >Edit</Link></button> */}

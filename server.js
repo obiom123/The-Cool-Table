@@ -85,12 +85,12 @@ app.get('/api/players/:id', async (request, response) => {
 
 app.delete('/api/players/:id', async (request, response) => {
   const id = request.params.id 
-  const deletePlayer = await Player.destroy({
+  await Player.destroy({
     where: {
       id: id
     }
   });
-  response.status(200).json(deletePlayers);
+  response.sendStatus(200);
 });
 
 app.put('/api/players/:id', async (request, response) => {
@@ -123,7 +123,31 @@ app.put('/api/players/:id', async (request, response) => {
   response.json(playerEdit);
 })
 
-
+app.post('/api/players', async (request, response) => {
+  // const token = request.headers['jwt-token'];
+  // const verify = await jwt.verify(token, jwtSecret);
+  const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG, teamId  } = request.body
+  const player = await Player.create({
+      name: name,
+      age: age,
+      playerPhoneNumber: playerPhoneNumber,
+      playerEmergencyContact: playerEmergencyContact,
+      pointsGame1: pointsGame1,
+      pointsGame2: pointsGame2,
+      pointsGame3: pointsGame3,
+      pointsGame4: pointsGame4,
+      pointsGame5: pointsGame5,
+      pointsGame6: pointsGame6,
+      pointsGame7: pointsGame7,
+      pointsGame8: pointsGame8,
+      pointsGame9: pointsGame9,
+      pointsGame10: pointsGame10,
+      pointsGame11: pointsGame11,
+      pointsGame12: pointsGame12,
+      avgPPG: avgPPG
+  });
+  response.status(200).json(player)
+});
 
 
 

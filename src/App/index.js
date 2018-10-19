@@ -7,6 +7,8 @@ import DisplayCoesneck from "../DisplayCoesneck";
 import PlayersFromTeams from "../PlayersFromTeams";
 import DetailPlayerView from "../DetailPlayerView";
 import EditPlayerPage from "../EditPlayerPage"
+import AddPlayerPage from "../AddPlayerPage"
+
 
 
 
@@ -84,6 +86,8 @@ class App extends Component {
         <Route path="/PlayersFromTeams/:id" exact component={PlayersFromTeams} />
         <Route path="/DetailPlayerView/:id" exact component={DetailPlayerView} />
         <Route path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
+        <Route path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
+
 
 
 
