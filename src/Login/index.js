@@ -44,7 +44,7 @@ export default class Login extends Component {
   render() {
     if (this.state.loggedIn) {
       return (
-        <Redirect to="/editpage" />
+        <Redirect to="/DisplayCoesneck" />
       )
     }
     return (

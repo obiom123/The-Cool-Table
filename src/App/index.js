@@ -6,9 +6,10 @@ import Login from "../Login";
 import DisplayCoesneck from "../DisplayCoesneck";
 import PlayersFromTeams from "../PlayersFromTeams";
 import DetailPlayerView from "../DetailPlayerView";
+import DetailedTeamPage from "../DetailedTeamPage";
 import EditPlayerPage from "../EditPlayerPage"
 import AddPlayerPage from "../AddPlayerPage"
-
+import PrivateRoute from "../PrivateRoute";
 
 
 
@@ -67,6 +68,10 @@ class App extends Component {
             <li className="nav-list-items">Leagues<a className="nav-link-items" href="#"></a></li>
             <li className="nav-list-items">Donate<a className="nav-link-items" href="#"></a></li>
             <li className="nav-list-items"><Link to="/login">Login</Link></li>
+            <li className="nav-list-items"><Link to="/login" onClick={this.logout} >Logout</Link></li>
+
+
+
 
           </ul>
         </nav>
@@ -82,11 +87,12 @@ class App extends Component {
               render={(props) => <Login {...props} emailValid={this.state.emailValid} passwordValid={this.state.passwordValid} userEmail={this.state.userEmail} password={this.state.password} onLogIn={this.onLogIn} onInputChange={this.onInputChange} />}
             />
         {/* <Route path="/editpage" exact component={EditPage} /> */}
-        <Route path="/DisplayCoesneck" exact component={DisplayCoesneck} />
-        <Route path="/PlayersFromTeams/:id" exact component={PlayersFromTeams} />
-        <Route path="/DetailPlayerView/:id" exact component={DetailPlayerView} />
-        <Route path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
-        <Route path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
+        <PrivateRoute path="/DisplayCoesneck" exact component={DisplayCoesneck} />
+        <PrivateRoute path="/PlayersFromTeams/:id" exact component={PlayersFromTeams} />
+        <PrivateRoute path="/DetailPlayerView/:id" exact component={DetailPlayerView} />
+        <PrivateRoute path="/DetailedTeamPage/:id" exact component={DetailedTeamPage} />
+        <PrivateRoute path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
+        <PrivateRoute path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
 
 
 

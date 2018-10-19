@@ -9,6 +9,7 @@ export default class PlayersFromTeams extends Component {
 
         this.state = {
             players: [],
+            teams: [],
             deletePlayer: false
         }
     }
@@ -22,6 +23,15 @@ export default class PlayersFromTeams extends Component {
         console.log(playersInfo)
         this.setState({
             players: playersInfo
+        })
+
+        const findTeamsInfo = await fetch(`/api/teams?leagueid[]=${id}`, {
+            method: 'GET',
+          })
+        const teamsInfo = await findTeamsInfo.json()
+        console.log(teamsInfo)
+        this.setState({
+            teams: teamsInfo
         })
     } 
 
@@ -38,6 +48,8 @@ export default class PlayersFromTeams extends Component {
 
     render() {
         const { name, age, playerPhoneNumber, playerEmergencyContact, pointsGame1, pointsGame2, pointsGame3, pointsGame4, pointsGame5, pointsGame6, pointsGame7, pointsGame8, pointsGame9, pointsGame10, pointsGame11, pointsGame12, avgPPG  } = this.state.players
+        const { teamName, coachName, coachPhoneNumber, coachEmail, teamColor, amountOwed } = this.state.teams
+
 
 
       
@@ -53,8 +65,8 @@ export default class PlayersFromTeams extends Component {
                     <h1>This is the Player pageeeeeee</h1>
                     <p className="detail-info-label detail-name" ><span className="detail-info">{name}</span></p>
                     <p className="detail-info-label"><span>{age}</span></p>
-                    <p className="detail-info-label">WE MET AT: <span className="detail-info">{playerPhoneNumber}</span></p>
-                    <p className="detail-info-label"><span>{pointsGame1}</span></p>
+                    <p className="detail-info-label">Players: <span className="detail-info">{playerPhoneNumber}</span></p>
+                    {/* <p className="detail-info-label"><span>{pointsGame1}</span></p>
                     <p className="detail-info-label"><span>{pointsGame2}</span></p>
                     <p className="detail-info-label"><span>{pointsGame3}</span></p>
                     <p className="detail-info-label"><span>{pointsGame4}</span></p>
@@ -67,9 +79,12 @@ export default class PlayersFromTeams extends Component {
                     <p className="detail-info-label"><span>{pointsGame11}</span></p>
                     <p className="detail-info-label"><span>{pointsGame12}</span></p>
                     <p className="detail-info-label"><span>{playerEmergencyContact}</span></p>
-                    <p className="detail-info-label"><span>{avgPPG}</span></p>
+                    <p className="detail-info-label"><span>{avgPPG}</span></p> */}
                     {this.state.players.map(player => <Link className="each-contact-name" to={'/DetailPlayerView/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Averging{player.avgPPG}</p></Link>)}
+                    {this.state.teams.map(team => <Link className="each-contact-name" to={'/DetailTeamView/' + team.id} key={team.id} ><p className="each-contact-name" key={team.id} >{team.teamName}</p></Link>)}
 
+                    {this.state.teams.map(team => <p className="each-contact-name" key={team.id} >{team.teamName}</p>)}
+                    
 
                     <Link className="addcontact-button-container" to={'/AddPlayerPage/' + this.props.match.params.id}><img className="addcontact-button" src={"/images/addButton.png"}/></Link>
 

@@ -25,9 +25,11 @@ export default class AddPlayerPage extends Component {
       pointsGame11: "",
       pointsGame12: "",
       avgPPG: "",
+      teamId: "",
       submittedAddPlayer: false
     }
   }
+
 
   onInputChange = evt => {
     this.setState({
@@ -53,8 +55,11 @@ export default class AddPlayerPage extends Component {
       pointsGame10: this.state.pointsGame10,
       pointsGame11: this.state.pointsGame11,
       pointsGame12: this.state.pointsGame12,
-      avgPPG: this.state.avgPPG
+      avgPPG: this.state.avgPPG,
+      teamId: this.state.teamId
     });
+
+
 
     const checkUserResponse = await fetch('/api/players', {
       method: 'POST',
@@ -138,6 +143,10 @@ export default class AddPlayerPage extends Component {
           <label htmlFor="input-WhereYouMet" className="add-label add-contactWhereYouMet-label">Average PPG</label>
           <input id="input-avgPPG" className="add-input inputavgPPG" type="text" name="avgPPG" value={this.state.avgPPG} onChange={this.onInputChange} />
           <br></br>
+          <label htmlFor="input-WhereYouMet" className="add-label add-contactWhereYouMet-label">Team</label>
+          <input id="input-avgPPG" className="add-input inputavgPPG" placeholder={this.state.teamId} type="text" name="teamId" value={this.state.teamId} onChange={this.onInputChange} />
+          <br></br>
+
           <button className="add-contact" onClick={this.addThisPlayer}>Add Player</button>
         </form>
       </div>

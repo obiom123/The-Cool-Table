@@ -73,6 +73,27 @@ app.get('/api/players', async (request, response) => {
   const players = await Player.findAll(findAllOptions);
   response.json(players)
 })
+
+app.get('/api/teams', async (request, response) => {
+  console.log(request.query)
+  // const token = request.headers['jwt-token'];
+  // const verify = await jwt.verify(token, jwtSecret);
+  const findAllOptions = {
+    order: [['id', 'DESC']],
+  }
+  if (request.query.leagueid) {
+    findAllOptions.include = [
+      {
+        model: League,
+        where: { id: request.query.leagueid },
+        attributes: []
+      }
+    ]
+  }
+  const teams = await Team.findAll(findAllOptions);
+  response.json(teams)
+})
+
 app.get('/api/players/:id', async (request, response) => {
   let id = request.params.id
   const idPlayer = await Player.findOne({
@@ -144,7 +165,8 @@ app.post('/api/players', async (request, response) => {
       pointsGame10: pointsGame10,
       pointsGame11: pointsGame11,
       pointsGame12: pointsGame12,
-      avgPPG: avgPPG
+      avgPPG: avgPPG,
+      teamId: teamId
   });
   response.status(200).json(player)
 });
