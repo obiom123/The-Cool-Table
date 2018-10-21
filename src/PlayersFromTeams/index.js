@@ -80,10 +80,20 @@ export default class PlayersFromTeams extends Component {
                     <p className="detail-info-label"><span>{pointsGame12}</span></p>
                     <p className="detail-info-label"><span>{playerEmergencyContact}</span></p>
                     <p className="detail-info-label"><span>{avgPPG}</span></p> */}
-                    {this.state.players.map(player => <Link className="each-contact-name" to={'/DetailPlayerView/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Averging{player.avgPPG}</p></Link>)}
+                    {this.state.players.map(player => <Link className="each-contact-name" to={'/editPlayerPage/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Averging{player.avgPPG}</p></Link>)}
                     {this.state.teams.map(team => <Link className="each-contact-name" to={'/DetailTeamView/' + team.id} key={team.id} ><p className="each-contact-name" key={team.id} >{team.teamName}</p></Link>)}
 
-                    {this.state.teams.map(team => <p className="each-contact-name" key={team.id} >{team.teamName}</p>)}
+                    <table id="stats">
+                        <tr>
+                    <th> {this.state.teams.map(team => <Link className="each-contact-name" to={'/DetailTeamView/' + team.id} key={team.id} ><p className="each-contact-name" key={team.id} >{team.teamName}</p></Link>)}</th>
+                            
+                        </tr>
+                        <tr>  {this.state.players.map(player => <Link className="each-contact-name" to={'/editPlayerPage/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Averging{player.avgPPG}</p></Link>)} </tr>
+
+
+                    </table>
+
+                   
                     
 
                     <Link className="addcontact-button-container" to={'/AddPlayerPage/' + this.props.match.params.id}><img className="addcontact-button" src={"/images/addButton.png"}/></Link>

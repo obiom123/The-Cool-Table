@@ -1,55 +1,75 @@
-body{
-margin: 0;
-padding: 0;
-}
-.page-container{
-box-sizing: border-box;
-width: 100%;
-}
-/* Nav Section */
-.nav-container{
-/* background-color: grey; */
-box-shadow: 0 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.3);
-width: 100%;
-height: 70px;
-display: flex;
-justify-content: space-between;
-font-family: sans-serif;
-/* padding: 10px; */
-/* transition: 5s; */
-} 
-.tctLogo{
-  height: 80px;
-  transition: 5s;
-}
-.links-container{
+ * body{
+   box-sizing: border-box;
+   margin: 0;
+   min-height: 100vh;
+  }
+  .nav-container{
+    /* background-color: rgba(220, 223, 210, 0.281); */
+  border: 1px solid;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
   display: flex;
   justify-content: space-between;
-  width: 50%;
-  height: 100%;
+ 
 }
-.nav-list-items{
-  list-style: none;
+
+ .links-container{
+   list-style: none;
+   display: flex;
+   justify-content: space-between;
+   width: 70%;
+   min-height: 100%;
+   margin: 0;
+   padding: 0;
+
+   /* margin-right: 25px; */
+ }
+ .nav-list-items{
+   min-height: 100%;
+   width: 100%;
+  display: flex;
+  justify-content: center;
+
+ }
+ .each-item-container{
+  width: 20%;
+  min-height: 100%;
+ align-self: center;
+ text-align: center;
+ display: flex;
+
 }
-.nav-link-items{
-  line-height: 40px;
-  color: #262626;
-  /* padding: 5px 20px; */
-  text-decoration: none;
-  text-transform: uppercase;
-  /* transition: 5s; */
-  /* font-family: 'Roboto', sans-serif; */
+ 
+ .each-item-container :hover{
+   background-color: gray;
+ }
+ .link-items{
+align-self: center;
+text-align: center;
+margin: 0 auto;
+
+ }
+
+ a{
+   color: #34495e;
+   text-decoration: none;
+ }
+ 
+ .tctLogo{
+   height: 5em;
+   }
+
+/* Banner */
+.banner{
+    width: 100%;
+    min-height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.2), rgba(255, 255, 0, 0.4)), url(/images/girls.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
 }
-.links-container :hover{
-  color: #ffffff;
-  background: #f00;
+.text-header-banner{
+  padding: 0;
+  margin: 0;
 }
-section{
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url(/images/girls.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
-}
+

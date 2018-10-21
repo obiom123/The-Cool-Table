@@ -69,7 +69,6 @@ export default class DetailPlayerView extends Component {
                     {/* {this.state.players.map(player => <Link className="each-contact-name" to={'/detailcontact/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Avg PPG {player.avgPPG}</p></Link>)} */}
 
 
-
                     <div className="edit-button-container">
                         {/* <Link className="button" to={'/editcontact/' + this.props.match.params.id} ><button>Edit</button></Link> */}
                         <button className="button"><Link className="link" to={'/editPlayerPage/' + this.props.match.params.id} >Edit</Link></button>
