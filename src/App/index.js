@@ -10,6 +10,8 @@ import DetailedTeamPage from "../DetailedTeamPage";
 import EditPlayerPage from "../EditPlayerPage"
 import AddPlayerPage from "../AddPlayerPage"
 import PrivateRoute from "../PrivateRoute";
+import Home from "../Home";
+
 
 
 
@@ -57,11 +59,13 @@ class App extends Component {
     return (
       <Router>
         <div className="App page-container">
+        <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"></link>
           <nav className="nav-container top-bar">
               <img className="tctLogo logo" src="/images/coolTableLogo.png"></img>
               <ul className="links-container">
 
-                <Link to="/" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Home</a></li></Link>
+                <Link to="/Home" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Home</a></li></Link>
                 <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">About</a></li></div>
                 <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Our Team</a></li></div>
                 <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Donate</a></li></div>
@@ -76,28 +80,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-            <main className="main-content">
-              <div className="main1">
-                <h2 >Main Heading One</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div className="main2">
-                <h2>Main Heading Two</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div className="main3">
-                <h2>Main Heading Three</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              
             
-
-            </main>
-            <footer>
-
-              <Link to="/login">Login</Link>
-              <Link to="/login" onClick={this.logout} >Logout</Link>
-            </footer>
             <Route
               path="/login"
               render={(props) => <Login {...props} emailValid={this.state.emailValid} passwordValid={this.state.passwordValid} userEmail={this.state.userEmail} password={this.state.password} onLogIn={this.onLogIn} onInputChange={this.onInputChange} />}
@@ -109,6 +92,7 @@ class App extends Component {
             <PrivateRoute path="/DetailedTeamPage/:id" exact component={DetailedTeamPage} />
             <PrivateRoute path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
             <PrivateRoute path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
+            <Route path="/Home" exact component={Home} />
 
 
 
@@ -125,7 +109,12 @@ class App extends Component {
             <Link to="/login">Login</Link>
             <Link to="/DisplayCoesneck">Coesneck</Link>
             <Link to="/PlayersFromTeams">PlayerrrrrrrPageeee</Link>
+            <footer>
+              
+            </footer>
 
+              <Link to="/login">Login</Link>
+              <Link to="/login" onClick={this.logout} >Logout</Link>
 
         </div>
       </Router>

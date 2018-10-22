@@ -40,8 +40,9 @@
 }
  
  .each-item-container :hover{
-   background-color: gray;
- }
+  background-color: aliceblue;
+  font-size: calc(100% + 5px);
+}
  .link-items{
 align-self: center;
 text-align: center;
@@ -72,4 +73,9 @@ margin: 0 auto;
   padding: 0;
   margin: 0;
 }
-
+/* Footer */
+footer{
+  background-color: rgba(17, 17, 17, 0.699);
+  width: 100%;
+  height: 10vh;
+}
