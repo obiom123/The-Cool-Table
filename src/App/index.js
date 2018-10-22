@@ -11,6 +11,8 @@ import EditPlayerPage from "../EditPlayerPage"
 import AddPlayerPage from "../AddPlayerPage"
 import PrivateRoute from "../PrivateRoute";
 import Home from "../Home";
+import About from "../About";
+
 
 
 
@@ -66,10 +68,11 @@ class App extends Component {
             <ul className="links-container">
 
               <Link to="/Home" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Home</a></li></Link>
-              <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">About</a></li></div>
+              <Link to="/About" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">About</a></li></Link>
               <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Our Team</a></li></div>
               <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Donate</a></li></div>
-              <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Coesneck-Classic</a></li></div>
+              <Link to="/DisplayCoesneck" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Coesneck-Classic</a></li></Link>
+
             </ul>
           </nav>
           <div className="banner">
@@ -93,6 +96,8 @@ class App extends Component {
           <PrivateRoute path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
           <PrivateRoute path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
           <Route path="/Home" exact component={Home} />
+          <Route path="/About" exact component={About} />
+
 
 
 
