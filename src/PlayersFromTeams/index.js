@@ -59,10 +59,10 @@ export default class PlayersFromTeams extends Component {
             )
           }
         return (
-            <div>
+            <div className="statsDiv">
                 {/* <Link to="/"><img className="exit-button" src={"/images/button-exit.png"}/></Link> */}
                 <div className="all-form-containers">
-                    <h1>This is the Player pageeeeeee</h1>
+                    <h1>This is the league page</h1>
                     <p className="detail-info-label detail-name" ><span className="detail-info">{name}</span></p>
                     <p className="detail-info-label"><span>{age}</span></p>
                     <p className="detail-info-label">Players: <span className="detail-info">{playerPhoneNumber}</span></p>
@@ -82,8 +82,37 @@ export default class PlayersFromTeams extends Component {
                     <p className="detail-info-label"><span>{avgPPG}</span></p> */}
                     {this.state.players.map(player => <Link className="each-contact-name" to={'/editPlayerPage/' + player.id} key={player.id} ><p className="each-contact-name" key={player.id} >{player.name} Averging{player.avgPPG}</p></Link>)}
                     {this.state.teams.map(team => <Link className="each-contact-name" to={'/DetailTeamView/' + team.id} key={team.id} ><p className="each-contact-name" key={team.id} >{team.teamName}</p></Link>)}
-
                     <table id="stats">
+                        <tr>
+                            <td>
+                                Falcons
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                John
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Jeb
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Eagles
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Rick
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bob
+                            </td>
+                        </tr>
                         <tr>
                     <th> {this.state.teams.map(team => <Link className="each-contact-name" to={'/DetailTeamView/' + team.id} key={team.id} ><p className="each-contact-name" key={team.id} >{team.teamName}</p></Link>)}</th>
                             

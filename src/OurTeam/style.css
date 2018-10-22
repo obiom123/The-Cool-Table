@@ -1,0 +1,64 @@
+.entire-staff-container{
+width: 100%;
+}
+.section-staff-container{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  padding-top: 20px;
+  
+}
+.section-staff-container:nth-child(even) {
+  background: rgb(204, 204, 204)
+}
+.staff-text-container{
+  width: 45vh;
+  margin: auto 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.each-staff-header{
+  font-size: 50px;
+  margin: 0;
+
+}
+.each-staff-description{
+font-size: 30px;
+margin: 0;
+font-style: italic;
+}
+
+.staff-pic-container{
+  height: 75vh;
+  width: 45vh;
+  margin-left: 25px;
+}
+.oddColor{
+  color: grey;
+}
+.evenColor{
+  color: white;
+}
+.individual-staff-pic{
+  height: 70vh;
+  width: 100%;
+}
+.fred1{
+  border: 10px double grey;
+}
+.obi1{
+  border: 10px double white;
+}
+.mike1{
+  border: 10px double grey;
+}
+.ant1{
+  border: 10px double white;
+}
+.gabe1{
+  border: 10px double grey;
+}
+.rief1{
+  border: 10px double white;
+}

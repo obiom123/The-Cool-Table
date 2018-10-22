@@ -8,13 +8,13 @@ const main = async () => {
     passwordDigest: 'coolbeans'
   })
   const league1 = await League.create({
-    leagueName: 'Fake Mens League1',
+    leagueName: 'Mens League',
     gender: 'Men',
     startEndDates: '2/2/2019-4/4/2019',
     leagueFee: '$800',
   })
   const league2 = await League.create({
-    leagueName: 'Fake Mens League2',
+    leagueName: 'Girls League',
     gender: 'Men',
     startEndDates: '2/2/2019-4/4/2019',
     leagueFee: '$800',
@@ -29,7 +29,7 @@ const main = async () => {
     amountOwed: 300
   })
   const team2 = await Team.create({
-    teamName: 'team2',
+    teamName: 'Young Shooters',
     coachName: 'Coach Obi',
     coachPhoneNumber: '516-223-0818',
     coachEmail: 'Obiom1@hotmail.com',
@@ -37,7 +37,7 @@ const main = async () => {
     amountOwed: 300
   })
   const team3 = await Team.create({
-    teamName: 'team3',
+    teamName: 'Fill it Up',
     coachName: 'Coach Obi',
     coachPhoneNumber: '516-223-0818',
     coachEmail: 'Obiom1@hotmail.com',
@@ -45,7 +45,7 @@ const main = async () => {
     amountOwed: 300
   })
   const team4 = await Team.create({
-    teamName: 'team4',
+    teamName: 'Shooters Shoot',
     coachName: 'Coach Obi',
     coachPhoneNumber: '516-223-0818',
     coachEmail: 'Obiom1@hotmail.com',
@@ -53,6 +53,30 @@ const main = async () => {
     amountOwed: 300
   })
   const team5 = await Team.create({
+    teamName: 'Good Girls Gone',
+    coachName: 'Coach Obi',
+    coachPhoneNumber: '516-223-0818',
+    coachEmail: 'Obiom1@hotmail.com',
+    teamColor: 'purple',
+    amountOwed: 300
+  })
+  const team6 = await Team.create({
+    teamName: 'team 5',
+    coachName: 'Coach Obi',
+    coachPhoneNumber: '516-223-0818',
+    coachEmail: 'Obiom1@hotmail.com',
+    teamColor: 'purple',
+    amountOwed: 300
+  })
+  const team7 = await Team.create({
+    teamName: 'team 5',
+    coachName: 'Coach Obi',
+    coachPhoneNumber: '516-223-0818',
+    coachEmail: 'Obiom1@hotmail.com',
+    teamColor: 'purple',
+    amountOwed: 300
+  })
+  const team8 = await Team.create({
     teamName: 'team 5',
     coachName: 'Coach Obi',
     coachPhoneNumber: '516-223-0818',
@@ -61,10 +85,16 @@ const main = async () => {
     amountOwed: 300
   })
 
-  await team2.setLeague(league2);
-  await team3.setLeague(league2);
+  await team1.setLeague(league1);
+  await team2.setLeague(league1);
+  await team3.setLeague(league1);
   await team4.setLeague(league1);
-  await team5.setLeague(league1);
+  await team5.setLeague(league2);
+  await team6.setLeague(league2);
+  await team7.setLeague(league2);
+  await team8.setLeague(league2);
+
+
 
 
   const player1 = await Player.create({
@@ -160,7 +190,7 @@ const main = async () => {
     pointsGame10: 35,
     pointsGame11: 35,
     pointsGame12: 35,
-    avgPPG: 35,
+    avgPPG: 11,
   })
   const player6 = await Player.create({
     name: 'Jim Jones',
@@ -179,15 +209,216 @@ const main = async () => {
     pointsGame10: 8,
     pointsGame11: 8,
     pointsGame12: 8,
-    avgPPG: 8,
+    avgPPG: 9,
+  })
+  const player7 = await Player.create({
+    name: 'Caris LeVert',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 15,
+  })
+  const player8 = await Player.create({
+    name: 'Alex Smith',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 17,
+  })
+  const player9 = await Player.create({
+    name: 'Tasha Smith',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 20,
+  })
+  const player10 = await Player.create({
+    name: 'Alice Walker',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 27,
+  })
+  const player11 = await Player.create({
+    name: 'Kat Morris',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 19,
+  })
+  const player12 = await Player.create({
+    name: 'Natacha Jenkins',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 7,
+  })
+  const player13 = await Player.create({
+    name: 'Sarah Short',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 14,
+  })
+  const player14 = await Player.create({
+    name: 'Sasha Prince',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 15,
+  })
+  const player15 = await Player.create({
+    name: 'Kim Parker',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 18,
+  })
+  const player16 = await Player.create({
+    name: 'Tina Jones',
+    age: 29,
+    playerPhoneNumber: '516-555-5555',
+    playerEmergencyContact: 'Mom 516-555-5555',
+    pointsGame1: 8,
+    pointsGame2: 8,
+    pointsGame3: 8,
+    pointsGame4: 8,
+    pointsGame5: 8,
+    pointsGame6: 8,
+    pointsGame7: 8,
+    pointsGame8: 8,
+    pointsGame9: 8,
+    pointsGame10: 8,
+    pointsGame11: 8,
+    pointsGame12: 8,
+    avgPPG: 15,
   })
 
-  await player1.setTeam(team2);
-  await player2.setTeam(team2);
+  await player1.setTeam(team1);
+  await player2.setTeam(team1);
   await player3.setTeam(team2);
-  await player4.setTeam(team1);
-  await player5.setTeam(team1);
-  await player6.setTeam(team1);
+  await player4.setTeam(team2);
+  await player5.setTeam(team3);
+  await player6.setTeam(team3);
+  await player7.setTeam(team4);
+  await player8.setTeam(team4);
+  await player9.setTeam(team5);
+  await player10.setTeam(team5);
+  await player11.setTeam(team6);
+  await player12.setTeam(team6);
+  await player13.setTeam(team7);
+  await player14.setTeam(team7);
+  await player15.setTeam(team8);
+  await player16.setTeam(team8);
+
 
 
 

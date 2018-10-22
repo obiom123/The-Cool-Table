@@ -35,10 +35,10 @@ export default class DisplayCoesneck extends Component {
 
 render() {
     return (
-      <div className="Leagues">
+      <div className="leagues statsDiv">
         <h1>This is the league display page</h1>
 
-        <div className="league-containers">
+        <div className="leagues-containers">
 
           {this.state.leagues.map(league => <Link className="each-league-name" to={'/PlayersFromTeams/' + league.id} key={league.id} ><p className="each-league-name" key={league.id} >{league.leagueName}</p></Link>)}
           

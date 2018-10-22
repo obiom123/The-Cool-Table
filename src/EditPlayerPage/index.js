@@ -117,7 +117,7 @@ export default class EditPlayersPage extends Component {
     }
    
     return (
-      <div className="edit-form-container">
+      <div className="edit-form-container statsDiv">
         <Link to="/"><img className="exit-button" src={"/images/button-exit.png"}/></Link>
         <form className="all-form-containers" onSubmit={this.onSubmit}>
         <h1>Edit Contact</h1>

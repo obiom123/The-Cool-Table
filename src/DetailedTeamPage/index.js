@@ -45,7 +45,7 @@ export default class DetailedTeamPage extends Component {
             )
         }
         return (
-            <div>
+            <div className="statsDiv">
                 <Link to="/"><img className="exit-button" src={"/images/button-exit.png"} /></Link>
                 <div className="all-form-containers">
                     <h1>This is the Player pageeeeeee</h1>

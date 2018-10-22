@@ -12,6 +12,8 @@ import AddPlayerPage from "../AddPlayerPage"
 import PrivateRoute from "../PrivateRoute";
 import Home from "../Home";
 import About from "../About";
+import OurTeam from "../OurTeam";
+
 
 
 
@@ -63,13 +65,15 @@ class App extends Component {
         <div className="App page-container">
           <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet"></link>
           <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"></link>
           <nav className="nav-container top-bar">
             <img className="tctLogo logo" src="/images/coolTableLogo.png"></img>
             <ul className="links-container">
 
               <Link to="/Home" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Home</a></li></Link>
               <Link to="/About" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">About</a></li></Link>
-              <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Our Team</a></li></div>
+              <Link to="/OurTeam" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Our Team</a></li></Link>
               <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Donate</a></li></div>
               <Link to="/DisplayCoesneck" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Coesneck-Classic</a></li></Link>
 
@@ -97,6 +101,8 @@ class App extends Component {
           <PrivateRoute path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
           <Route path="/Home" exact component={Home} />
           <Route path="/About" exact component={About} />
+          <Route path="/OurTeam" exact component={OurTeam} />
+
 
 
 
@@ -134,7 +140,7 @@ class App extends Component {
             </div>
           </footer>
 
-          <Link to="/login" onClick={this.logout} >Logout</Link>
+          {/* <Link to="/login" onClick={this.logout} >Logout</Link> */}
 
         </div>
       </Router>
