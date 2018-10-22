@@ -59,18 +59,18 @@ class App extends Component {
     return (
       <Router>
         <div className="App page-container">
-        <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"></link>
           <nav className="nav-container top-bar">
-              <img className="tctLogo logo" src="/images/coolTableLogo.png"></img>
-              <ul className="links-container">
+            <img className="tctLogo logo" src="/images/coolTableLogo.png"></img>
+            <ul className="links-container">
 
-                <Link to="/Home" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Home</a></li></Link>
-                <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">About</a></li></div>
-                <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Our Team</a></li></div>
-                <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Donate</a></li></div>
-                <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Coesneck-Classic</a></li></div>
-              </ul>
+              <Link to="/Home" className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Home</a></li></Link>
+              <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">About</a></li></div>
+              <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Our Team</a></li></div>
+              <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Donate</a></li></div>
+              <div className="each-item-container"><li className="nav-list-items"><a className="link-items" href="#">Coesneck-Classic</a></li></div>
+            </ul>
           </nav>
           <div className="banner">
             <div className="banner-text">
@@ -80,19 +80,19 @@ class App extends Component {
               </div>
             </div>
           </div>
-            
-            <Route
-              path="/login"
-              render={(props) => <Login {...props} emailValid={this.state.emailValid} passwordValid={this.state.passwordValid} userEmail={this.state.userEmail} password={this.state.password} onLogIn={this.onLogIn} onInputChange={this.onInputChange} />}
-            />
-            {/* <Route path="/editpage" exact component={EditPage} /> */}
-            <PrivateRoute path="/DisplayCoesneck" exact component={DisplayCoesneck} />
-            <PrivateRoute path="/PlayersFromTeams/:id" exact component={PlayersFromTeams} />
-            <PrivateRoute path="/DetailPlayerView/:id" exact component={DetailPlayerView} />
-            <PrivateRoute path="/DetailedTeamPage/:id" exact component={DetailedTeamPage} />
-            <PrivateRoute path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
-            <PrivateRoute path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
-            <Route path="/Home" exact component={Home} />
+
+          <Route
+            path="/login"
+            render={(props) => <Login {...props} emailValid={this.state.emailValid} passwordValid={this.state.passwordValid} userEmail={this.state.userEmail} password={this.state.password} onLogIn={this.onLogIn} onInputChange={this.onInputChange} />}
+          />
+          {/* <Route path="/editpage" exact component={EditPage} /> */}
+          <PrivateRoute path="/DisplayCoesneck" exact component={DisplayCoesneck} />
+          <PrivateRoute path="/PlayersFromTeams/:id" exact component={PlayersFromTeams} />
+          <PrivateRoute path="/DetailPlayerView/:id" exact component={DetailPlayerView} />
+          <PrivateRoute path="/DetailedTeamPage/:id" exact component={DetailedTeamPage} />
+          <PrivateRoute path="/EditPlayerPage/:id" exact component={EditPlayerPage} />
+          <PrivateRoute path="/AddPlayerPage/:id" exact component={AddPlayerPage} />
+          <Route path="/Home" exact component={Home} />
 
 
 
@@ -100,21 +100,36 @@ class App extends Component {
 
 
 
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="UQR66D2AAAZF2" />
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-            </form>
-            <Link to="/login">Login</Link>
-            <Link to="/DisplayCoesneck">Coesneck</Link>
-            <Link to="/PlayersFromTeams">PlayerrrrrrrPageeee</Link>
-            <footer>
-              
-            </footer>
+          {/* <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UQR66D2AAAZF2" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+          </form>
+          <Link to="/DisplayCoesneck">Coesneck</Link>
+          <Link to="/PlayersFromTeams">PlayerrrrrrrPageeee</Link> */}
+          <footer>
 
-              <Link to="/login">Login</Link>
-              <Link to="/login" onClick={this.logout} >Logout</Link>
+            <div className="inside-footer-container">
+            <form className="footer-form-container" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UQR66D2AAAZF2" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+          </form>
+             
+
+              <div className="individual-logo-container middle-logo-container">
+                <img className="logo-footer cnc-logo" src="/images/cnc-logo.png" />
+          <Link className="login-footer" to="/login">Login</Link>
+              </div>
+              <a className="individual-logo-container insta-container" href="https://www.instagram.com/coesneckclassic/"> 
+                <img className="logo-footer insta-logo" src="/images/insta-logo.png" />
+              </a>
+            </div>
+          </footer>
+
+          <Link to="/login" onClick={this.logout} >Logout</Link>
 
         </div>
       </Router>

@@ -81,7 +81,7 @@ export default class Login extends Component {
             <button className="button" type="button" onClick={this.logIn}>Log in</button>
           </div>
 
-          <p>{this.state.errorMessage}</p>
+          <p className="error-message">{this.state.errorMessage}</p>
         </form>
       </div>
     )

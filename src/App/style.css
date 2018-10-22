@@ -41,12 +41,14 @@
  
  .each-item-container :hover{
   background-color: aliceblue;
-  font-size: calc(100% + 5px);
+  font-size: calc(100% + 3px);
 }
  .link-items{
 align-self: center;
 text-align: center;
 margin: 0 auto;
+font-family: 'Yantramanav';
+/* font-size: 18px; */
 
  }
 
@@ -77,5 +79,50 @@ margin: 0 auto;
 footer{
   background-color: rgba(17, 17, 17, 0.699);
   width: 100%;
+  height: 11vh;
+}
+.inside-footer-container{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin: 0 auto;
+
+}
+.footer-links-container{
   height: 10vh;
+
+}
+.individual-logo-container{
+  height: 10vh;
+}
+.logo-footer{
+  height: 10vh;
+}
+.donate-footer{
+
+}
+.footer-form-container{
+  display: flex;
+  align-self: center
+}
+.insta-logo{
+  height: 8vh;
+  margin-top: 10px;
+}
+.insta-container{
+  display: flex;
+  align-self: center;
+}
+.middle-logo-container{
+  display: flex;
+  flex-direction: column;
+}
+.login-footer{
+text-align: center;
+padding-right: 8px;
+color: white;
+}
+.cnc-logo{
+  height: 8vh;
 }

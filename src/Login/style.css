@@ -1,0 +1,84 @@
+
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 350px;
+}
+
+.email {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  width: 80%;
+  padding-bottom: 100px;
+  padding-top: 15px;
+}
+
+.button {
+  background-color: #a0bb05;
+  color: white;
+  width: 200px;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  outline: none;
+}
+
+.login-label {
+  /* display: block; */
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  font-weight: 900;
+  margin-top: 20px;
+  /* margin: 2rem auto; */
+}
+
+.login-input {
+  /* display: block; */
+  text-align: center;
+  border: 2px solid #366e00;
+  border-radius: 30px;
+  background-color: rgb(195, 244, 190);
+  padding: 10px 20px;
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.login-input:hover {
+  text-align: center;
+  border: 2px solid #366e00;
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: .5s;
+
+}
+
+.error-message {
+  text-align: center;
+}
+
+
+.log-reg-button{
+    margin-left: 40px;
+}

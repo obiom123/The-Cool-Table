@@ -22,9 +22,12 @@
 }
 .quotes-header{
   margin: 0;
+  color: #C5B358;
+  font-size: 30px;
 }
 .quotes-paragraphs{
   margin: 0;
+  color: #CFB53B;
 }
 
 /* Gallery */
@@ -57,12 +60,12 @@ margin-top: 0;
 justify-content: center;
 }
 .individual-pic-container{
-height: 20vh;
-width: 24vh;
+height: 30vh;
+width: 40vh;
 margin: 5px 5px;
 
 }
 .individual-pic{
-height: 20vh;
+height: 30vh;
 width: 100%;
 }
