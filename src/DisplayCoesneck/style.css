@@ -3,5 +3,19 @@
   font-family: Mali;
 }
 .statsDiv{
-  min-height: 80vh
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+font-family: 'Merriweather';
+background-color: rgb(112, 111, 109);
+width: 50%;
+margin: 40px auto;
+color: white;
+border-radius: 50%;
+}
+.statsDiv p{
+color: white;
 }

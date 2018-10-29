@@ -36,7 +36,7 @@ export default class DisplayCoesneck extends Component {
 render() {
     return (
       <div className="leagues statsDiv">
-        <h1>This is the league display page</h1>
+        <h1>Select A League</h1>
 
         <div className="leagues-containers">
 

@@ -140,7 +140,7 @@ class App extends Component {
             </div>
           </footer>
 
-          {/* <Link to="/login" onClick={this.logout} >Logout</Link> */}
+          <Link to="/login" onClick={this.logout} >Logout</Link>
 
         </div>
       </Router>

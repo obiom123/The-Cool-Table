@@ -87,6 +87,7 @@ footer{
   justify-content: space-between;
   align-self: center;
   margin: 0 auto;
+  margin-left: 20px;
 
 }
 .footer-links-container{
@@ -104,7 +105,7 @@ footer{
 }
 .footer-form-container{
   display: flex;
-  align-self: center
+  align-self: center;
 }
 .insta-logo{
   height: 8vh;

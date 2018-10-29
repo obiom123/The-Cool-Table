@@ -404,20 +404,20 @@ const main = async () => {
 
   await player1.setTeam(team1);
   await player2.setTeam(team1);
-  await player3.setTeam(team2);
-  await player4.setTeam(team2);
-  await player5.setTeam(team3);
-  await player6.setTeam(team3);
-  await player7.setTeam(team4);
-  await player8.setTeam(team4);
-  await player9.setTeam(team5);
-  await player10.setTeam(team5);
-  await player11.setTeam(team6);
-  await player12.setTeam(team6);
-  await player13.setTeam(team7);
-  await player14.setTeam(team7);
-  await player15.setTeam(team8);
-  await player16.setTeam(team8);
+  await player3.setTeam(team1);
+  await player4.setTeam(team1);
+  await player5.setTeam(team1);
+  await player6.setTeam(team1);
+  await player7.setTeam(team1);
+  await player8.setTeam(team1);
+  await player9.setTeam(team1);
+  await player10.setTeam(team2);
+  await player11.setTeam(team2);
+  await player12.setTeam(team2);
+  await player13.setTeam(team2);
+  await player14.setTeam(team2);
+  await player15.setTeam(team2);
+  await player16.setTeam(team2);
 
 
 
